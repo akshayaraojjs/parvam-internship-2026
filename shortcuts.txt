@@ -1,0 +1,10 @@
+Ctrl + ? - Commenting
+Alt + z - Wrapping
+! - Structure of HTML
+Shift + Alt + Bottom/Top Arrow - Cloning
+Ctrl + D - Multiple Cursor for same word
+lorem50 - dummy para
+
+Emmet: 
+li*5 - 5 list items
+li{item-$}*5

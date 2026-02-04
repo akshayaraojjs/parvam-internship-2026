@@ -1,0 +1,188 @@
+<!-- table is a representation of data in Rows & Columns format -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- table is a root element for tables -->
+    <!-- table is built using row perspective -->
+    <!-- Blueprint: table - outer tag, tr - represents the number of rows, th or td - represents the number of columns -->
+    <table>
+        <!-- tr - table row -->
+        <!-- th - table heading, it will be bold -->
+        <!-- td - table data -->
+        <tr>
+            <th>Heading 1</th>
+            <th>Heading 2</th>
+            <th>Heading 3</th>
+            <th>Heading 4</th>
+            <th>Heading 5</th>
+        </tr>
+        <tr>
+            <td>Data 11</td>
+            <td>Data 12</td>
+            <td>Data 13</td>
+            <td>Data 14</td>
+            <td>Data 15</td>
+        </tr>
+        <tr>
+            <td>Data 21</td>
+            <td>Data 22</td>
+            <td>Data 23</td>
+            <td>Data 24</td>
+            <td>Data 25</td>
+        </tr>
+    </table>
+
+    <!-- IPL Player List -->
+     <!-- For merging rows & columns, we can use rowspan & colspan -->
+    <table>
+        <tr>
+            <th>Sl. No.</th>
+            <th>Player Name</th>
+            <th>Role</th>
+            <th colspan="2">Country & IPL Team</th>
+            <!-- <th>IPL Team</th> -->
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Virat Kohli</td>
+            <td rowspan="3">Batsman</td>
+            <td rowspan="4">India</td>
+            <td rowspan="2">RCB</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rajat Patidar</td>
+            <!-- <td>Batsman</td> -->
+            <!-- <td>India</td> -->
+            <!-- <td>RCB</td> -->
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rohit Sharma</td>
+            <!-- <td>Batsman</td> -->
+            <!-- <td>India</td> -->
+            <td rowspan="2">MI</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Jasprit Bumrah</td>
+            <td>Bowler</td>
+            <!-- <td>India</td> -->
+            <!-- <td>MI</td> -->
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Travis Head</td>
+            <td>Batsman</td>
+            <td>Australia</td>
+            <td>SRH</td>
+        </tr>
+    </table>
+
+    <h1>Cricket Scoreboard</h1>
+    <table>
+        <tr>
+            <th colspan="4">India</th>
+            <th colspan="2">150/4(20)</th>
+        </tr>
+        <tr>
+            <th>Player Name</th>
+            <th>Runs</th>
+            <th>Balls Faced</th>
+            <th>4s</th>
+            <th>6s</th>
+            <th>Strike Rate</th>
+        </tr>
+        <tr>
+            <td>Virat Kohli</td>
+            <td>58*</td>
+            <td>36</td>
+            <td>3</td>
+            <td>5</td>
+            <td>153</td>
+        </tr>
+        <tr>
+            <td>Ruturaj Gaikwad <br> c David Warner b M Marsh</td>
+            <td>34</td>
+            <td>26</td>
+            <td>2</td>
+            <td>3</td>
+            <td>135</td>
+        </tr>
+        <tr>
+            <td>Rohit Sharma <br> lbw b M Starc</td>
+            <td>65</td>
+            <td>42</td>
+            <td>4</td>
+            <td>6</td>
+            <td>143</td>
+        </tr>
+        <tr>
+            <th colspan="2">Extras</th>
+            <th colspan="4">15 (B:1, LB: 4, NB: 4, W: 6)</th>
+        </tr>
+        <tr>
+            <th colspan="2">Total (20 Ov, RR: 7.56)</th>
+            <th colspan="2">150/4</th>
+            <th>10</th>
+            <th colspan="2">7</th>
+        </tr>
+    </table>
+
+    <!-- While using colspan, we will comment the same rows(tr) additional values -->
+    <!-- While using rowspan, we will comment the rows from next(tr) additional values -->
+    <table>
+        <tr>
+            <th>Heading-1</th>
+            <th colspan="3">Heading-2</th>
+
+            <!-- <th>Heading-3</th>
+            <th>Heading-4</th>
+            <th>Heading-5</th> -->
+        </tr>
+        <tr>
+            <td>Data-11</td>
+            <td>Data-12</td>
+            <td rowspan="4">Data-13</td>
+            <td>Data-14</td>
+            <td>Data-15</td>
+        </tr>
+        <tr>
+            <td>Data-21</td>
+            <td>Data-22</td>
+            <!-- <td>Data-23</td> -->
+            <td>Data-24</td>
+            <td rowspan="3">Data-25</td>
+        </tr>
+        <tr>
+            <td>Data-31</td>
+            <td>Data-32</td>
+            <!-- <td>Data-33</td> -->
+            <td>Data-34</td>
+            <!-- <td>Data-35</td> -->
+        </tr>
+        <tr>
+            <td>Data-41</td>
+            <td>Data-42</td>
+            <!-- <td>Data-43</td> -->
+            <td>Data-44</td>
+            <!-- <td>Data-45</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>
