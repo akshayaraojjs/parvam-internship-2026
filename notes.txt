@@ -7,3 +7,21 @@ Backend -
 Java - Basics, Advance, OOPs, Spring + MySQL
 Python - Basics, Advance, OOPs, Django + MySQL
 ML - Basics, Advance, Algorithms, Model Training
+
+Git Basics:
+
+Create a Repository
+
+git clone "url"
+
+cd new-path
+
+copy files from working folder to github folder
+
+git status
+
+git add filename or git add .
+
+git commit -m "relevant message"
+
+git push origin main
