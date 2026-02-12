@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .click-btn {
+            padding: 10px;
+            font-size: 20px;
+            color: white;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        .click-btn:hover {
+            background-color: lightgreen;
+            color: black;
+        }
+
+        .link {
+            text-decoration: none;
+            color: rgb(45, 45, 161);
+            font-size: 20px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+            font-size: 22px;
+            color: brown;
+        }
+
+        h1:hover {
+            color: red;
+        }
+
+        /* vistied psuedo class will apply the styles for already opened links or old links */
+        a:visited {
+            color: red;
+        }
+
+        /* link psuedo class will apply the styles for unopened links or new links */
+        a:link {
+            color: yellowgreen;
+        }
+
+        /* active psuedo class will apply the styles for the links which is being clicked */
+        a:active {
+            color: cyan;
+        }
+
+        h1:first-child {
+            color: crimson;
+        }
+
+        div{
+            border: 1px solid black;
+        }
+
+        li:first-child{
+            color: blue;
+            font-size: 20px;
+        }
+
+        p:last-child{
+            color: yellow;
+            background-color: brown;
+        }
+
+        li:last-child{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is a main heading</h1>
+    <h2>This is a sub heading</h2>
+    <h2>This is another heading</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse illum deserunt voluptates itaque delectus
+        <h1>Heading 1 within a div</h1>
+        <h1>Heading 1 within a div</h1>
+            ullam ipsa molestias accusantium? Ipsum, sunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum veritatis pariatur ut dolores voluptatem
+            corrupti.</p>
+            <h2>Heading 2 of First Div</h2>
+    </div>
+    <div>
+        <h1>First Child of Second Div</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At voluptatum recusandae quisquam numquam aut alias corrupti fugit totam nihil debitis.</p>
+    </div>
+    <ul>
+        <li>List - 1</li>
+        <li>List - 2</li>
+        <li>List - 3</li>
+        <li>List - 4</li>
+        <li>List - 5</li>
+    </ul>
+    <button class="click-btn">Click me</button>
+    <a class="link" href="https://parvamconsultech.com" target="_blank">ParvaM</a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+</body>
+
+</html>
