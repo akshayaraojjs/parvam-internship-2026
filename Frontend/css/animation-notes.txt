@@ -1,0 +1,129 @@
+CSS ANIMATION PROPERTIES - COMPLETE LIST
+
+ CORE ANIMATION PROPERTIES
+
+1. animation-name
+
+animation-name: none;           /* default - no animation */
+animation-name: slideIn;        /* keyframes name */
+animation-name: bounce, fade;   /* multiple animations */
+animation-name: customName;     
+
+2. animation-duration
+
+animation-duration: 0s;         /* default - instant */
+animation-duration: 0.5s;       /* seconds */
+animation-duration: 400ms;      /* milliseconds */
+animation-duration: 2s, 1.5s;   /* multiple durations */
+
+3. animation-timing-function
+
+/* Keywords */
+animation-timing-function: ease;           /* default */
+animation-timing-function: linear;        
+animation-timing-function: ease-in;       
+animation-timing-function: ease-out;      
+animation-timing-function: ease-in-out;   
+animation-timing-function: step-start;    
+animation-timing-function: step-end;      
+
+/* Step functions */
+animation-timing-function: steps(4, end);     /* 4 equal steps */
+animation-timing-function: steps(10, start);  /* steps at beginning */
+animation-timing-function: steps(5, jump-start);
+animation-timing-function: steps(3, jump-end);
+animation-timing-function: steps(2, jump-none);
+animation-timing-function: steps(6, jump-both);
+
+/* Cubic Bezier */
+animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1); /* custom curve */
+
+/* Multiple timing functions */
+animation-timing-function: ease, linear, steps(4);
+
+4. animation-delay
+
+animation-delay: 0s;           /* default - no delay */
+animation-delay: 2s;           /* start after 2 seconds */
+animation-delay: 500ms;        /* milliseconds */
+animation-delay: -1s;          /* negative - starts mid-animation */
+animation-delay: 1s, 0.5s;     /* multiple delays */
+
+5. animation-iteration-count
+
+animation-iteration-count: 1;           /* default - once */
+animation-iteration-count: 3;           /* repeat 3 times */
+animation-iteration-count: infinite;    /* loop forever */
+animation-iteration-count: 2.5;         /* partial iterations */
+animation-iteration-count: infinite, 2; /* multiple counts */
+
+6. animation-direction
+
+animation-direction: normal;          /* default - 0% to 100% */
+animation-direction: reverse;        /* 100% to 0% */
+animation-direction: alternate;      /* normal then reverse */
+animation-direction: alternate-reverse; /* reverse then normal */
+animation-direction: normal, alternate; /* multiple directions */
+
+7. animation-fill-mode
+
+animation-fill-mode: none;        /* default - no styles before/after */
+animation-fill-mode: forwards;    /* retains 100% styles after animation */
+animation-fill-mode: backwards;   /* applies 0% styles before start */
+animation-fill-mode: both;        /* forwards + backwards */
+animation-fill-mode: forwards, none; /* multiple fill modes */
+
+8. animation-play-state
+
+animation-play-state: running;    /* default - animation playing */
+animation-play-state: paused;     /* animation paused */
+animation-play-state: running, paused; /* multiple states */
+
+SHORTHAND
+
+animation (1-8 values)
+
+/* format: name duration timing-function delay iteration-count direction fill-mode play-state */
+animation: slideIn 1s ease;                                   /* minimum 2 values */
+animation: fadeOut 0.5s linear 0.2s;                         /* 4 values */
+animation: bounce 2s ease-in-out 0.5s 3 alternate;           /* 6 values */
+animation: spin 3s cubic-bezier(0.1,0.7,1,0.1) 0s infinite normal both paused; /* all 8 */
+
+/* Multiple animations */
+animation: 
+  slideIn 0.5s ease,
+  fadeOut 0.3s linear 0.2s,
+  bounce 2s infinite;
+
+@KEYFRAMES RULE
+
+Keyframe selectors
+
+@keyframes slideIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes complex {
+  from { opacity: 0; }           /* same as 0% */
+  to { opacity: 1; }             /* same as 100% */
+  20% { transform: scale(0.9); }
+  80% { transform: scale(1.1); }
+}
+
+COMPLETE SUMMARY TABLE
+
+| Property | Default | Values | Description | | Identifies the @keyframes |
+| `animation-duration` | `0s` | `<time>` | Length of one cycle |
+| `animation-timing-function` | `ease` | `ease`, `linear`, `steps()`, `cubic-bezier()` | Acceleration curve |
+| `animation-delay` | `0s` | `<time>` | Wait before starting |
+| `animation-iteration-count` | `1` | `<number>`, `infinite` | How many cycles |
+| `animation-direction` | `normal` | `normal`, `reverse`, `alternate`, `alternate-reverse` | Cycle direction |
+| `animation-fill-mode` | `none` | `none`, `forwards`, `backwards`, `both` | Styles before/after |
+| `animation-play-state` | `running` | `running`, `paused` | Play/pause control |
+| Shorthand | `animation` | `none` | All properties in one |
