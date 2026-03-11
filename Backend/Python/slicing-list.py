@@ -31,3 +31,11 @@ print(numbers[-10: -2])
 print(numbers[-7:])
 
 print(numbers[:-1])
+
+# list[start:end:step]
+# step is for skipping the items
+print(numbers[1:7:2])
+
+print(numbers[0::3])
+
+print(numbers[::4])
