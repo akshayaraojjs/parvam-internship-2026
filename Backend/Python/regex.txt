@@ -1,0 +1,23 @@
+Regular Expressions are useful for Pattern Matching, which can be used for Validation purpose
+
+[a-z] - Lowercase Characters
+[A-Z] - Uppercase Characters
+[0-9] - All Numbers
+[./,] - Special Characters
+\s - All Whitespaces
+\S - All Non-Whitespaces
+\w - [a-z] + [A-Z] + [0-9]
+\W - Other than these combination [a-z] + [A-Z] + [0-9] (Spaces)
+\d - [0-9]
+\D - All characters other than [0-9]
+. - Anything [a-z], [A-Z], ., space, [0-9]
+^ - Starts with
+$ - Ends with
+? - zero or 1
++ - one or more
+* - zero or more
+
+Flags:
+g - global
+i - case insensitive, both uppercase and lowercase pattern will be matched
+m - multiline
