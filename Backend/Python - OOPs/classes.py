@@ -38,5 +38,6 @@ std3 = Student(name = "Vijay", age = 25, branch="AIML", semester=8)
 Student.printDetails(std1)
 
 # Both can be used for calling the methods
+# std2.printDetails(std2)
 std2.printDetails()
 std3.printDetails()

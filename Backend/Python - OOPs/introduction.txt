@@ -8,6 +8,6 @@ Pillars or Characteristics of OOPs:
 1) Class - Blueprint
 2) Object - Instance of Class
 3) Encapsulation - Combine Variables & Methods
-4) Abstraction - Hiding the Sensite Data
+4) Abstraction - Hiding the Sensitive Data
 5) Polymorphism - Same Name Multiple Forms
 6) Inheritance - Inheriting the Properties from Parent Class to Sub/Child Class

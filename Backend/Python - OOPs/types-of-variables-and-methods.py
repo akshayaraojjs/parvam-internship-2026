@@ -176,3 +176,12 @@ Bank.enquiry()
 
 Bank.number_of_accounts()
 Bank.calculateInterest(50000, 2)
+
+# Employee
+# name, dob, email, phone, education, skills[list]
+
+# registration - generate id for employee and add to some dept
+
+# assign some work
+
+# employee work on that and mentions the time taken for work
