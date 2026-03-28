@@ -1,0 +1,10 @@
+inner class: A class dependent on another class
+
+Inheritance: Inheriting the properties from Base Class to Derived Class
+
+Types of Inheritance:
+1) Single Inheritance: One Parent - One Child (Parent -> Child)
+2) Multiple Inheritance: Multiple Parent - One Child (Parent1 -> Child <- Parent2)
+3) Multi-level Inheritance: Multi-level Parents - Child (Grand Parent -> Parent -> Child)  
+4) Hierarchical Inheritance: One Parent - Multiple Children (Child1 -> Parent <- Child2)
+5) Hybrid Inheritance: Combination of any 2 types
