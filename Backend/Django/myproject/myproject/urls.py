@@ -22,4 +22,5 @@ urlpatterns = [
     # If the route is empty, then go to demo app - urls.py
     # Redirecting the base route to demo/urls.py file
     path('', include('demo.urls')),
+    path('student_app/', include('student_app.urls')),
 ]

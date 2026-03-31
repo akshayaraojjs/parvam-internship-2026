@@ -100,3 +100,28 @@ Folder Structure:
 6) views.py - Used for writing the Business or Backend Logic
 
 7) templates - Used for Designing Purpose
+
+Make a new app called student_app
+-> python manage.py startapp student_app
+
+Daily Procedure:
+1) Run Xampp: Apache & MySQL
+2) Open VS Code Terminal, switch to cmd
+3) Activate Virtual environment: 
+-> djangoEnv\Scripts\activate
+(djangoEnv) check whether this appears in terminal
+4) Go to project folder path
+5) Run the django server:
+-> python manage.py runserver
+
+
+Check these urls:
+http://127.0.0.1:8000/student_app/
+http://127.0.0.1:8000/student_app/form
+http://127.0.0.1:8000/student_app/info
+
+CRUD Operation
+Create - Insertion
+Read - Listing
+Update - Updating the Details
+Delete - Deleting the Details

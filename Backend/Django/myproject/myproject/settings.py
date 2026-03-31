@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # New line added for registering the new app: demo
     'demo',
+    # New app: student-app need to mentioned in main project
+    'student_app',
 ]
 
 MIDDLEWARE = [
