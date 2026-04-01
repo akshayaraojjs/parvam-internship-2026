@@ -1,0 +1,17 @@
+{% extends 'student_app/base.html' %}
+
+{% block content %}
+    <h1 class="text-danger bg-warning text-center p-3">Delete Student Details</h1> 
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-danger">Do you really want to delete the details of {{ student.name }}?</h1>
+        </div>
+        <div class="card-footer">
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-success" type="submit">Yes</button>
+                <a class="btn btn-danger" href="{% url 'list_of_students' %}">No</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
