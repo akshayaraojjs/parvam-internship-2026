@@ -1,0 +1,103 @@
+Scikit-learn is a ML library used to:
+
+Build models
+Train models
+Evaluate models
+Preprocess data
+
+With this library, we will be getting ready-made algorithms to design a model quickly without the need of implementing from scratch.
+
+Steps to Design a ML project:
+1) Data Preparation
+2) Feature & Target Extraction
+3) Train-Test Split
+4) Choose Model
+5) Train Model
+6) Predict
+7) Evaluate
+
+Flow:
+Input Data -> Learn Pattern -> Predict Output
+
+Types of Problems in scikit-learn
+1) Regression:
+Output - Continuous
+Ex: Salary Prediction, House Price Prediction
+Output: 25000, 15000, 50000, etc
+
+2) Classification:
+Output - Category
+Ex: Spam / Not Spam, Pass / Fail
+Output: True / False(0 or 1)
+
+3) Clustering
+Grouping similar data
+Ex: Customer Segmentation
+
+Important Algorithms:
+1) Linear Regression
+2) Logistic Regression
+3) KNN (K-Nearest Neighbors)
+4) Decision Tree
+5) Random Forest
+
+Overfitting vs Underfitting
+
+Overfitting: Bad for real-world and model memorizes the data
+Underfitting: Poor performance or Model is too simple
+Ideal Model: Good performance and ideal for real-world
+
+Terminologies:
+Dataset: A collection of data (rows & columns or CSV)
+Features (X): Input variables used to make predictions
+Target (y): Output variable that we need to predict
+Sample/Instance: One row of data
+Model: A function that learns relationship
+    Input (X) -> Output (y)
+Training: Process where model learns patterns from data
+Testing: Checking model performance with unknown or unseen data
+Prediction: Model Output for new Input
+Parameters: Values learned by model
+Hyperparameters: Set it manually before Training (Config or Prerequisites for Training)
+
+Confusion Matrix: Used in Classification Problems
+                    Predicted Positive      Predicted Negative
+Actual Positive             TP                      FN
+Actual Negative             FP                      TN
+
+Abbrevations for Confusion Matrix
+TP - True Positive      TN - True Negative
+FP - False Positive     FN - False Negative
+
+Example: Spam Detection
+Email is spam & predicted spam - TP
+Email is not spam but predicted spam - FP
+
+Formulae:
+
+Classification Metrics
+1) Accuracy:
+Accuracy = (TP + TN)/Total
+
+Meaning: Overall Correctness
+
+2) Precision:
+Precision = TP/(TP + FP)
+
+Meaning: Out of predicted positives, how many are correct
+It is used to find the number of false positives
+
+3) Recall (Sensitivity):
+Recall = TP/(TP + FN)
+
+Meaning: Out of actual positives, how many of are right
+It is used to find the missing positives
+
+4) F1 Score:
+F1 = 2 * [(Precision * Recall)/(Precision + Recall)]
+
+Meaning: Balance b/w Precision & Recall
+
+Regression Metrics:
+
+Shared seperately
