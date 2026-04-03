@@ -1,3 +1,4 @@
+<!-- We are using DRY policy of Django - Don't Repeat Yourself -->
 {% extends 'student_app/base.html' %}
 
 {% block content %}
@@ -15,8 +16,13 @@
             </tr>
         </thead>
         <tbody>
+            <!-- To fetch and show all the data, we will use for loop -->
+            <!-- Jinja2 template engine  -->
+            <!-- Jinja2 helps to use Python code in HTML file --> 
+            <!-- {{ data }} & "{ % data % }" are the examples of jinja2 usage -->
             {% for student in students %}
             <tr>
+                <!-- We will refer each key to get its value -->
                 <td>{{ student.name }}</td>
                 <td>{{ student.dob }}</td>
                 <td>{{ student.email }}</td>
@@ -24,6 +30,8 @@
                 <td>{{ student.gender }}</td>
                 <td>{{ student.branch }}</td>
                 <td>
+                    <!-- We are using named route -->
+                    <!-- <a class="btn btn-secondary" href="{{ student.pk }}">View</a> -->
                     <a class="btn btn-secondary" href="{% url 'student_details' student.pk %}">View</a>
                     <a class="btn btn-warning" href="{% url 'update_details' student.pk %}">Edit</a>
                     <a class="btn btn-danger" href="{% url 'remove_student' student.pk %}">Delete</a>

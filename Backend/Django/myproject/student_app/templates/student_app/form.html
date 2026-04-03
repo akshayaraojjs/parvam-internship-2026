@@ -1,12 +1,17 @@
 {% extends 'student_app/base.html' %}
 
 {% block content %}
-    <h1 class="text-warning bg-danger text-center p-3">{% if form.instance.pk %} Edit Student Details {% else %}Student Registration Form{% endif %}</h1>
-    <form class="container-fluid" method="post">
-        {% csrf_token %}
-        <div class="mb-3">
+<!-- If the primary key is found in the URL, then consider it as Eidt Form or show it as a Registration Form -->
+<h1 class="text-warning bg-danger text-center p-3">{% if form.instance.pk %} Edit Student Details {% else %}Student Registration Form{% endif %}</h1>
+<form class="container-fluid" method="post">
+    <!-- CSRF - Cross Site Request Forgery -->
+    <!-- To secure the access of the form to the genuine user and to avoid malicious attacks -->
+    {% csrf_token %}
+    <div class="mb-3">
+        <!-- We will render the Django Meta forms with each input field in the form of paragraph tag -->
             {{ form.as_p }}
         </div>
+        <!-- If the primary key is found in the URL, then change the button to Update or Show it as Submit -->
         <button class="btn {% if form.instance.pk %}btn-warning{% else %} btn-success{% endif %}" type="submit">{% if form.instance.pk %} Update {% else %} Submit {% endif %}</button>
     </form>
-{% endblock %}
+    {% endblock %}

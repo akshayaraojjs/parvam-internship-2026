@@ -79,15 +79,23 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
+        # MySQL Database
         'ENGINE': 'django.db.backends.mysql',
+        # Database Name
         'NAME': 'myproject_db',
+        # Username of the MySQL Database (root is default user)
         'USER': 'root',
+        # Password of the MySQL Database (empty is default password)
         'PASSWORD': '',
+        # Localhost refers to the local system or server
         'HOST': 'localhost',
         # You use 3306, I'll use 3307(due to some change in my system)
+        # Default port number for MySQL is "3306", in some case it will be changed
         'PORT': '3307',
     }
 }
+
+# Retain everything for other projects and just change the DB name.
 
 
 # Password validation

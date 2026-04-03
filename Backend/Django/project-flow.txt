@@ -1,0 +1,66 @@
+Create django project:
+-> django-admin startproject project_name
+
+Open settings.py and configure the Database:
+-> DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'change the db name here',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+Create a new module or application:
+-> python manage.py startapp module_name
+
+In new module, create the neccessary files:
+
+2 Files:
+-> urls.py
+-> forms.py
+
+2 Folders:
+-> templates/module_name
+
+In settings.py, add the module_name like this:
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # New module will be mentioned here
+    'new_module',
+]
+
+In main_project/urls.py, link it with new_module urls.py:
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # New module_name urls will be linked in this way:
+    # 1st Way: Base route or empty link
+    path('', include('module_name.urls')),
+    # 2nd Way: Named route with the module_name as a link
+    path('moduel_name/', include('module_name.urls')),
+]
+
+------------First Phase of the project will be done here----------------------------
+
+------Second Phase---------
+In new_module/models.py, configure the db schema for your application
+
+Then configure the new_module/forms.py file and link it with models
+
+Create the routes for the new_module: new_module/urls.py
+
+Create the views method based on the routes created: new_module/views.py
+
+Create html files for CRUD Operation
