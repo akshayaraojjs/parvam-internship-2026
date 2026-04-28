@@ -1,0 +1,166 @@
+1) objects.all()
+Syntax: Model.objects.all()
+
+Ex:  Student.objects.all()
+
+# First imoport the model - Student Model
+from practice.models import Student
+
+# Store the data in the variable
+student_list = Student.objects.all()
+
+print(student_list)
+
+2) To insert one record at a time using objects.create() method:
+objects.create()
+
+Ex: Student.objects.create()
+
+Student.objects.create(name="Akshay Rao", email="akshayarao@gmail.com", phone="6465224525", branch_id = 2)
+
+Student.objects.create(name="Ajay Rao", email="ajayrao@gmail.com", phone="6465224545", branch_id = 1)
+
+3) Object based insertion:
+object.save()
+
+s1 = Student(name = "Akash", email = "akash@gmail.com", phone = "9956235612", branch_id = 3)
+s2 = Student(name = "Abhi", email = "abhi@gmail.com", phone = "8562451234", branch_id = 4)
+
+s1.save()
+s2.save()
+
+4) Bulk Insertion: objects.bulk_create([obj1, obj2])
+
+s1 = Student(name = "Abhijit", email = "abhijit@gmail.com", phone = "9956235645", branch_id = 1) 
+s2 = Student(name = "Abhinav", email = "abhinav@gmail.com", phone = "8262451234", branch_id = 3)
+
+Student.objects.bulk_create([s1, s2])
+
+5) Get single data using any column:
+
+Syntax: Model.objects.get(column=value)
+
+Ex: stu51 = Student.objects.get(id=51)
+
+6) Fetching first & last data:
+
+Student.objects.first()
+Student.objects.last()
+
+7) Filtering the data based on some condition:
+print(Student.objects.filter(branch_id = 1))
+print(Student.objects.filter(branch_id = 2))
+
+# If name contains "A" anywhere
+print(Student.objects.filter(name__contains="A"))
+# If name starts with "A"
+print(Student.objects.filter(name__startswith="A"))
+# If name contains case insensitive "A/a":
+print(Student.objects.filter(name__icontains="A"))
+# Sorting the data from name (A-Z):
+print(Student.objects.order_by('name'))
+# Sorting the data from name (Z-A):
+print(Student.objects.order_by('-name'))
+
+-----------------------------------------
+1) Adding New Student Details:
+
+from practice.models import Student, Course, Branch
+
+new_student = Student.objects.create(name="Akshay", email="akshay@gmail.com", phone="8854215423", dob="2001-05-15", gender="M", sem=8, registration_date="2026-04-23", branch_id=2)
+
+new_student = Student.objects.create(name="Rajesh", email="rajesh@gmail.com", phone="8554215423", dob="2001-05-10", gender="M", sem=6, registration_date="2026-04-21", branch_id=5)
+
+2) Find the specific student data using their name:
+student = Student.objects.filter(name="Akshay")
+
+print(Student)
+
+3) Update the student name with new name:
+student = Student.objects.filter(name="Akshay").first()
+student.name = "Akshay Rao.J"
+student.save()
+
+4) Fetching or Targetting last data:
+delete_student = Student.objects.last()
+print(delete_student)
+
+5) Fetching all details from 3 tables:
+all_students = Student.objects.all()
+print(all_students)
+
+all_branches = Branch.objects.all()
+print(all_branches)
+
+all_courses = Course.objects.all()
+print(all_courses)
+
+6) Filtering Male & Female Students:
+male_students = Student.objects.filter(gender="M")
+print(male_students)
+
+female_students = Student.objects.filter(gender="F")
+print(female_students)
+
+7) Male & Female Students Count:
+print(Student.objects.filter(gender="M").count())
+
+print(Student.objects.filter(gender="F").count())
+
+8) Finding the students born between 2001 to 2002:
+print(Student.objects.filter(dob__range=['2001-01-01', '2002-12-31']))
+
+print(Student.objects.filter(dob__range=['2001-01-01', '2002-12-31']).count())
+
+9) Finding the students registered on 20th April 2026:
+print(Student.objects.filter(registration_date='2026-04-20'))
+
+print(Student.objects.filter(registration_date='2026-04-22'))
+
+10) Finding the male students registered on 23rd April:
+# And Condition
+print(Student.objects.filter(registration_date='2026-04-23', gender="M"))
+
+print(Student.objects.filter(registration_date='2026-04-22', gender="F"))
+
+11) Finding the Students registered on 23rd April or born between Jan 2002 to Dec 2003:
+from django.db.models import Q
+filter_student = Student.objects.filter(Q(dob__range=['2002-01-01', '2003-12-31']) | Q(registration_date='2026-04-23'))
+print(filter_student)
+
+print(Student.objects.filter(Q(dob__range=['2002-01-01', '2003-12-31']) | Q(registration_date='2026-04-23')).count())
+
+print(Student.objects.filter(dob__range=['2002-01-01', '2003-12-31'],registration_date='2026-04-23').count())
+
+12) Find the sum & average of all fees:
+from django.db.models import Sum
+total_fees = Course.objects.aggregate(Sum('fees'))
+print(total_fees)
+
+from django.db.models import Avg
+average_fees = Course.objects.aggregate(Avg('fees'))
+print(average_fees)
+
+13) Students who have registered for Java FSWD & Python FSWD:
+java_course = Course.objects.get(short_name='Java FSWD')
+java_students = java_course.students.all() 
+print(java_students)
+
+python_course = Course.objects.get(short_name='Python FSWD')
+python_students = python_course.students.all() 
+print(python_students)
+
+14) Finding the courses enrolled by students:
+
+# Checking for first student:
+students = Student.objects.first()
+courses = students.courses.all()
+print(courses)
+
+# Checking for 9th student:
+student_9 = Student.objects.filter(id=9).first()
+student_9_courses = student_9.courses.all()
+print(student_9_courses)
+
+print(F"Students in {java_course.short_name}: {{}}")
+
