@@ -1,0 +1,33 @@
+django-admin startproject car_parking_api
+
+cd car_parking_api
+
+python manage.py runserver
+
+python manage.py startapp car_parking
+
+pip install djangorestframework
+
+cd car_parking_api
+
+python manage.py runserver
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+Install Thunder Client (API Testing Tool)
+
+In Industry, we use PostMan
+
+URL: http://127.0.0.1:8000/api/slots/
+
+Method: POST 
+
+Payload:
+
+{
+  "slot_number" : "A1",
+  "car_type": "small",
+  "hourly_rate": 25.3
+}
